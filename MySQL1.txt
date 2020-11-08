@@ -1,0 +1,173 @@
+mysql> drop table if exists booklist;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    3
+Current database: db_test
+
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+
+mysql> create table booklist (
+    -> id int,
+    -> name varchar(20),
+    -> author varchar(30),
+    -> price int,
+    -> type varchar(30)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> insert into booklist (id,name,author,price,type)values
+    -> (1,'三国','罗贯中',30,'小说'),
+    -> (2,'西游记','吴承恩',35,'小说'),
+    -> (3,'红楼梦','曹雪芹',28,'小说'),
+    -> (4,'水浒传','施耐庵',32,'小说'),
+    -> (5,'Java核心技术','张三',50,'编程');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+mysql> SELECT * FROM booklist;
++------+------------------+-----------+-------+--------+
+| id   | name             | author    | price | type   |
++------+------------------+-----------+-------+--------+
+|    1 | 三国             | 罗贯中    |    30 | 小说   |
+|    2 | 西游记           | 吴承恩    |    35 | 小说   |
+|    3 | 红楼梦           | 曹雪芹    |    28 | 小说   |
+|    4 | 水浒传           | 施耐庵    |    32 | 小说   |
+|    5 | Java核心技术     | 张三      |    50 | 编程   |
++------+------------------+-----------+-------+--------+
+5 rows in set (0.01 sec)
+
+
+mysql> update booklist set price = 61 where name = 'Java核心技术';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+mysql> SELECT * FROM booklist;
++------+------------------+-----------+-------+--------+
+| id   | name             | author    | price | type   |
++------+------------------+-----------+-------+--------+
+|    1 | 三国             | 罗贯中    |    30 | 小说   |
+|    2 | 西游记           | 吴承恩    |    35 | 小说   |
+|    3 | 红楼梦           | 曹雪芹    |    28 | 小说   |
+|    4 | 水浒传           | 施耐庵    |    32 | 小说   |
+|    5 | Java核心技术     | 张三      |    61 | 编程   |
++------+------------------+-----------+-------+--------+
+5 rows in set (0.00 sec)
+
+
+mysql> drop table if exists booklist;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    3
+Current database: db_test
+
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+
+mysql> create table booklist (
+    -> id int,
+    -> name varchar(20),
+    -> author varchar(30),
+    -> price int,
+    -> type varchar(30)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> insert into booklist (id,name,author,price,type)values
+    -> (1,'三国','罗贯中',30,'小说'),
+    -> (2,'西游记','吴承恩',35,'小说'),
+    -> (3,'红楼梦','曹雪芹',28,'小说'),
+    -> (4,'水浒传','施耐庵',32,'小说'),
+    -> (5,'Java核心技术','张三',50,'编程');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+mysql> SELECT * FROM booklist;
++------+------------------+-----------+-------+--------+
+| id   | name             | author    | price | type   |
++------+------------------+-----------+-------+--------+
+|    1 | 三国             | 罗贯中    |    30 | 小说   |
+|    2 | 西游记           | 吴承恩    |    35 | 小说   |
+|    3 | 红楼梦           | 曹雪芹    |    28 | 小说   |
+|    4 | 水浒传           | 施耐庵    |    32 | 小说   |
+|    5 | Java核心技术     | 张三      |    50 | 编程   |
++------+------------------+-----------+-------+--------+
+5 rows in set (0.01 sec)
+
+
+mysql> update booklist set price = 61 where name = 'Java核心技术';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+mysql> SELECT * FROM booklist;
++------+------------------+-----------+-------+--------+
+| id   | name             | author    | price | type   |
++------+------------------+-----------+-------+--------+
+|    1 | 三国             | 罗贯中    |    30 | 小说   |
+|    2 | 西游记           | 吴承恩    |    35 | 小说   |
+|    3 | 红楼梦           | 曹雪芹    |    28 | 小说   |
+|    4 | 水浒传           | 施耐庵    |    32 | 小说   |
+|    5 | Java核心技术     | 张三      |    61 | 编程   |
++------+------------------+-----------+-------+--------+
+5 rows in set (0.00 sec)
+
+mysql> drop table if exists commodity;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+
+mysql> create table commodity(
+    -> id int,
+    -> name varchar(30),
+    -> price int,
+    -> stock varchar(2000)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> insert into commodity (id,name,price,stock)values
+    -> (1,'手机',1200,50),
+    -> (2,'烟',25,500),
+    -> (3,'玩具',80,300),
+    -> (4,'表',800,30),
+    -> (5,'杯子',20,100);
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+mysql> SELECT * FROM commodity;
++------+--------+-------+-------+
+| id   | name   | price | stock |
++------+--------+-------+-------+
+|    2 | 烟     |    25 | 500   |
+|    1 | 手机   |  1200 | 50    |
+|    2 | 烟     |    25 | 500   |
+|    3 | 玩具   |    80 | 300   |
+|    4 | 表     |   800 | 30    |
+|    5 | 杯子   |    20 | 100   |
++------+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+
+mysql> update commodity set price=price+30 where stock>30;
+Query OK, 5 rows affected (0.00 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+
+mysql> SELECT * FROM commodity;
++------+--------+-------+-------+
+| id   | name   | price | stock |
++------+--------+-------+-------+
+|    2 | 烟     |    55 | 500   |
+|    1 | 手机   |  1230 | 50    |
+|    2 | 烟     |    55 | 500   |
+|    3 | 玩具   |   110 | 300   |
+|    4 | 表     |   800 | 30    |
+|    5 | 杯子   |    50 | 100   |
++------+--------+-------+-------+
+6 rows in set (0.00 sec)﻿
